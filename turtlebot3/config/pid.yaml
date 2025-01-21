@@ -1,0 +1,16 @@
+turtlebot3:
+  # Publicar todos los estados de las articulaciones
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+  # Controladores de Velocidad
+  w1_position_controller:
+    type: effort_controllers/JointVelocityController
+    joint: wheel_left_joint
+    pid: {p: 0.08,i: 0.0,d: 0.0}
+
+  w2_position_controller:
+    type: effort_controllers/JointVelocityController
+    joint: wheel_right_joint
+    pid: {p: 0.08,i: 0.0,d: 0.0}

@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<launch>
+    <!-- Load joint conrtoller -->
+    <rosparam file="$(find turtlebot3)/config/pid.yaml" command="load"/>
+
+    <!-- Load controller  -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/turtlebot3" args=" w1_position_controller w2_position_controller joint_state_controller"/>
+
+    <!-- Convert joints states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <remap from="/joint_states" to="/turtlebot3/joint_states" />
+    </node>
+</launch>

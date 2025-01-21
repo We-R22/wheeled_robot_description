@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<launch>
+    <include file="$(find turtlebot3)/launch/turtlebot3_spawn.launch" />
+    <include file="$(find turtlebot3)/launch/turtlebot3_control.launch" />
+</launch>
